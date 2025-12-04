@@ -57,6 +57,9 @@ Route::middleware(['auth'])->group(function () {
 
     // Kelola Event (Detail & List Peserta)
     Route::get('/event/{id}/manage', [EventController::class, 'show'])->name('event.show');
+
+    //Download Excel
+    Route::get('/event/{id}/export-excel', [EventController::class, 'exportTickets'])->name('creator.export.excel');
     
     // Approve Pembayaran User
     Route::post('/transaction/{id}/approve', [EventController::class, 'approveTransaction'])->name('transaction.approve');
